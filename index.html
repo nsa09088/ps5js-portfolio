@@ -3,76 +3,96 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>나의 p5.js 작품</title>
+<title>나의 p5.js 전시관</title>
 
 <style>
 body{
-  font-family: sans-serif;
-  text-align: center;
   margin: 0;
+  font-family: sans-serif;
+  background: radial-gradient(circle at top, #f7f9fc, #dfe6f3);
+  text-align: center;
   padding: 40px 20px;
-  background: linear-gradient(135deg, #dfe9f3, #ffffff);
 }
 
-/* 🎨 제목 */
+/* 🖼️ 제목 (전시회 느낌) */
 h1{
-  font-size: 28px;
-  margin-bottom: 30px;
-  color: #333;
-  letter-spacing: 2px;
-  position: relative;
+  font-size: 30px;
+  letter-spacing: 3px;
+  color: #222;
+  margin-bottom: 10px;
 }
 
 h1::after{
   content:"";
   display:block;
-  width:120px;
+  width:140px;
   height:3px;
   background:#4a90e2;
-  margin:10px auto;
+  margin:10px auto 30px;
   border-radius:2px;
 }
 
-/* 📦 전체 그리드 */
+/* 🎨 갤러리 2x2 */
 #projects{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 900px;
   margin: auto;
+  padding: 10px;
 }
 
-/* 🧊 카드 스타일 */
+/* 🧊 전시 작품 카드 */
 .cell{
-  overflow: hidden;
-  border-radius: 15px;
+  height: 300px;
   background: white;
-  aspect-ratio: 16/9;
+  border-radius: 16px;
 
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  overflow: hidden;
+
+  /* ✨ 등장 애니메이션 */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s forwards;
 }
 
-/* ✨ hover 효과 */
+/* 카드 순차 등장 */
+.cell:nth-child(1){ animation-delay: 0.1s; }
+.cell:nth-child(2){ animation-delay: 0.2s; }
+.cell:nth-child(3){ animation-delay: 0.3s; }
+.cell:nth-child(4){ animation-delay: 0.4s; }
+
+/* hover = 전시 작품 강조 */
+.cell{
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .cell:hover{
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.2);
 }
 
-/* 🖥 iframe */
+/* iframe */
 iframe{
-  width: 600px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
   border: none;
-  transform: scale(0.5);
-  transform-origin: top left;
+}
+
+/* ✨ 등장 효과 */
+@keyframes fadeIn{
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>
 </head>
 
 <body>
 
-<h1>나의 p5.js 작품</h1>
+<h1>🎨 나의 p5.js 전시관</h1>
 
 <div id="projects">
 
