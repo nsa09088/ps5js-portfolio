@@ -7,34 +7,65 @@
 
 <style>
 body{
-  font-family:sans-serif;
-  text-align:center;
-  background:#f5f5f5;
-  padding:20px;
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #dfe9f3, #ffffff);
 }
 
+/* 🎨 제목 */
+h1{
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #333;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+h1::after{
+  content:"";
+  display:block;
+  width:120px;
+  height:3px;
+  background:#4a90e2;
+  margin:10px auto;
+  border-radius:2px;
+}
+
+/* 📦 전체 그리드 */
 #projects{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
-  max-width:900px;
-  margin:auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
 }
 
+/* 🧊 카드 스타일 */
 .cell{
-  overflow:hidden;
-  border:1px solid #ccc;
-  border-radius:10px;
-  background:white;
-  aspect-ratio:16/9;
+  overflow: hidden;
+  border-radius: 15px;
+  background: white;
+  aspect-ratio: 16/9;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+/* ✨ hover 효과 */
+.cell:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+/* 🖥 iframe */
 iframe{
-  width:600px;
-  height:400px;
-  border:none;
-  transform:scale(0.5);
-  transform-origin:top left;
+  width: 600px;
+  height: 400px;
+  border: none;
+  transform: scale(0.5);
+  transform-origin: top left;
 }
 </style>
 </head>
@@ -54,7 +85,7 @@ iframe{
   </div>
 
   <div class="cell">
-   <iframe src="p5js/과제2/index.html"></iframe>
+    <iframe src="p5js/과제2/index.html"></iframe>
   </div>
 
   <div class="cell">
