@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나의 p5.js 작품</title>
+
+<style>
+body{
+  font-family:sans-serif;
+  text-align:center;
+  background:#f5f5f5;
+  padding:20px;
+}
+
+#projects{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  max-width:900px;
+  margin:auto;
+}
+
+.cell{
+  overflow:hidden;
+  border:1px solid #ccc;
+  border-radius:10px;
+  background:white;
+  aspect-ratio:16/9;
+}
+
+iframe{
+  width:600px;
+  height:400px;
+  border:none;
+  transform:scale(0.5);
+  transform-origin:top left;
+}
+</style>
+</head>
+
+<body>
+
+<h1>나의 p5.js 작품</h1>
+
+<div id="projects">
+
+  <div class="cell">
+    <iframe src="과제1/index.html"></iframe>
+  </div>
+
+  <div class="cell">
+    <iframe src="과제4/index.html"></iframe>
+  </div>
+
+  <div class="cell">
+    <iframe src="과제2/index.html"></iframe>
+  </div>
+
+  <div class="cell">
+    <iframe src="과제3/index.html"></iframe>
+  </div>
+
+</div>
+
+</body>
+</html>
